@@ -1,5 +1,6 @@
 package com.whp;
 
+import org.springframework.amqp.core.AnonymousQueue;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.FanoutExchange;
@@ -13,19 +14,22 @@ public class FanoutRabbitConfig {
 	// 创建队列
 	@Bean
 	public Queue AMessage() {
-		return new Queue("fanout.A");
+		return new AnonymousQueue();
+		//return new Queue("fanout.A");
 	}
 
 	// 创建队列
 	@Bean
 	public Queue BMessage() {
-		return new Queue("fanout.B");
+		return new AnonymousQueue();
+		//return new Queue("fanout.B");
 	}
 
 	// 创建队列
 	@Bean
 	public Queue CMessage() {
-		return new Queue("fanout.C");
+		return new AnonymousQueue();
+		//return new Queue("fanout.C");
 	}
 
 	// 创建Fanout交换器
